@@ -15,6 +15,7 @@ apt-get install tor
 ```
 bash firefox-update.sh
 ```
+Or just do a dist-upgrade to the latest kali version. 
 
 * Tested On: Kali Linux, Parrot Security, Ubuntu, Debian.
 
