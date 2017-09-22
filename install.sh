@@ -2,5 +2,6 @@ wget https://github.com/mozilla/geckodriver/releases/download/v0.16.1/geckodrive
 sudo sh -c 'tar -x geckodriver -zf geckodriver-v0.16.1-linux64.tar.gz -O > /usr/bin/geckodriver'
 sudo chmod +x /usr/bin/geckodriver
 rm geckodriver-v0.16.1-linux64.tar.gz
+pip install -r requirements.txt
 apt-get install xvfb -y
 apt-get install tor -y
