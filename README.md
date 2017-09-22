@@ -9,11 +9,13 @@ apt-get install xvfb
 apt-get install tor
 ```
 * The tool works by launching a Firefox (version 52+) in headless mode to check for XSS alerts, so make sure you have it installed.
-You can upgrade your Firefox ESR using this command, but only do this when you are aware of what you doing
+
+## You can upgrade your Firefox ESR using this command, but only do this when you are aware of what you doing: 
 
 ```
 bash firefox-update.sh
 ```
+Or just do a dist-upgrade to the latest kali version. 
 
 * Tested On: Kali Linux, Parrot Security, Ubuntu, Debian.
 
