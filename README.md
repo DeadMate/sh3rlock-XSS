@@ -10,7 +10,7 @@ apt-get install tor
 ```
 * The tool works by launching a Firefox (version 52+) in headless mode to check for XSS alerts, so make sure you have it installed.
 
-* <span style="color:red"> ** You can upgrade your Firefox ESR using this command, but only do this when you are aware of what you doing ** </span>
+*  You can upgrade your Firefox ESR using this command, but only do this when you are aware of what you doing 
 
 ```
 bash firefox-update.sh
