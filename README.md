@@ -4,9 +4,6 @@
 
 ```
 bash install.sh
-pip install -r requirements.txt
-apt-get install xvfb
-apt-get install tor
 ```
 ### The tool works by launching a Firefox (version 52+) in headless mode to check for XSS alerts, so make sure you have it installed.
 
