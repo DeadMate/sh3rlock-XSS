@@ -22,4 +22,4 @@ def XssCheck(uri, xss, echo):
             print("%s %s\n"%(colored.green("No XSS for URL: "), colored.blue(exploit)))
     driver.quit()
     display.stop()
-    return
+    return result
