@@ -14,10 +14,8 @@ def XssCheck(uri, xss, echo):
         driver = webdriver.Firefox()
         driver.get(exploit)
         WebDriverWait(driver, 3).until(EC.alert_is_present(), "")
-
+        result = exploit
         print("%s %s\n"%(colored.red("XSS found in URL: "), colored.green(exploit)))
-        #with open('vulnerable.txt', 'a') as outfile:
-        #    result_line = outfile.writelines(z + "\n")
     except TimeoutException:
         print("%s %s\n"%(colored.green("No XSS for URL: "), colored.blue(exploit)))
     driver.quit()
