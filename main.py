@@ -37,13 +37,11 @@ with open ('xss.txt') as xss_file:
 
 numOfCombinations = len(url_array) * len(xss_array)
 
-for i in range(len(url_array)):
-    urlstring = url_array[i]
-    for j in range(len(xss_array)):        
-        xssstring = xss_array[j]
-        seq = (urlstring, xssstring)
-        z = ""
-        z = z.join (seq)
-        progress = (i + 1) * (j + 1)
-        print "Checking %s of %s:" % (progress, numOfCombinations)
-        XssCheck(z)
+with open('vulnerable.txt', 'a') as outfile:
+    for i in range(len(url_array)):
+        for j in range(len(xss_array)):        
+            print("Checking %s of %s:\n" % ((i + 1) * (j + 1), numOfCombinations))
+            successfulExploit = XssCheck(url_array[i],xss_array[j]),True)
+            if successfulExploit!=None:
+                outfile.writelines("%s\n"%(successfulExploit))
+    outfile.close()
