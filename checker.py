@@ -15,9 +15,11 @@ def XssCheck(uri, xss, echo):
         driver.get(exploit)
         WebDriverWait(driver, 3).until(EC.alert_is_present(), "")
         result = exploit
-        print("%s %s\n"%(colored.red("XSS found in URL: "), colored.green(exploit)))
+        if echo:
+            print("%s %s\n"%(colored.red("XSS found in URL: "), colored.green(exploit)))
     except TimeoutException:
-        print("%s %s\n"%(colored.green("No XSS for URL: "), colored.blue(exploit)))
+        if echo:
+            print("%s %s\n"%(colored.green("No XSS for URL: "), colored.blue(exploit)))
     driver.quit()
     display.stop()
     return
