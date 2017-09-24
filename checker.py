@@ -5,18 +5,21 @@ from selenium.common.exceptions import TimeoutException
 from pyvirtualdisplay import Display
 from clint.textui import colored
 
-def XssCheck(z):
+def XssCheck(uri, xss, echo):
+    result = None
     try:
+        exploit = "".join((uri,xss))
         display = Display(visible=0, size=(800, 600))
         display.start()
         driver = webdriver.Firefox()
-        driver.get(z)
+        driver.get(exploit)
         WebDriverWait(driver, 3).until(EC.alert_is_present(), "")
-        print colored.red("XSS found in URL: ") + colored.green(z)
-        with open('vulnerable.txt', 'a') as outfile:
-            result_line = outfile.writelines(z + "\n")
+        result = exploit
+        if echo:
+            print("%s %s"%(colored.red("XSS found in URL: "), colored.green(exploit)))
     except TimeoutException:
-        print colored.green("No XSS for URL: ") + colored.blue(z)
+        if echo:
+            print("%s %s"%(colored.green("No XSS for URL: "), colored.blue(exploit)))
     driver.quit()
     display.stop()
-    return
+    return result
