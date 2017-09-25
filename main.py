@@ -41,6 +41,4 @@ with open ('xss.txt') as xss_file:
     xss_array = xss_file.read().splitlines()
 numOfCombinations = len(url_array) * len(xss_array)
 exploits = [url + xss for url in url_array for xss in xss_array]
-with open('vulnerable.txt', 'a') as outfile:
-    Pool(cpu_count()).map(partial(XssCheck,echo=True,useProxy=useProxy,proxyHost=proxyHost,proxyPort=proxyPort,outfile=outfile),exploits)
-    outfile.close()
+Pool(cpu_count()).map(partial(XssCheck,echo=True,useProxy=useProxy,proxyHost=proxyHost,proxyPort=proxyPort,outFileName="vulnerable.txt"),exploits)
