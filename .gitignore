@@ -1,1 +1,4 @@
 .vscode/
+geckodriver.log
+*.pyc
+vulnerable.txt

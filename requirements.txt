@@ -3,3 +3,4 @@ requesocks
 argparse
 clint
 pyvirtualdisplay
+multiprocessing
