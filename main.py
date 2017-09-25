@@ -22,10 +22,10 @@ if choice in yes:
     useProxy = True
     proxyHost = "localhost"
     proxyPort = 9050
-    session = requesocks.session()
-    session.proxies = {'http': 'socks5://localhost:9050', 'https': 'socks5://localhost:9050'}
-    response = session.get('http://httpbin.org/ip')
-    print colored.red("\nYour IP for this TOR session is: ") + response.text[16:-4] + ("\n")
+    #session = requesocks.session()
+    #session.proxies = {'http': 'socks5://localhost:9050', 'https': 'socks5://localhost:9050'}
+    #response = session.get('http://httpbin.org/ip')
+    #print colored.red("\nYour IP for this TOR session is: ") + response.text[16:-4] + ("\n")
 elif choice in no:
     pass
 else:
