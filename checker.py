@@ -16,7 +16,7 @@ def GetFirefoxProfile(useProxy, proxyHost, proxyPort):
         profile.set_preference("network.proxy.ssl_port", proxyPort)
         profile.update_preferences()
     return profile
-def XssCheck(exploit, echo, useProxy, proxyHost, proxyPort, outfile):
+def XssCheck(exploit, echo, useProxy, proxyHost, proxyPort, outFileName):
     try:
         display = Display(visible=0, size=(800, 600))
         display.start()
@@ -25,7 +25,9 @@ def XssCheck(exploit, echo, useProxy, proxyHost, proxyPort, outfile):
         WebDriverWait(driver, 3).until(EC.alert_is_present(), "")
         if echo:
             print("%s %s"%(colored.green("XSS found in URL: "), colored.white(exploit)))
-        outfile.writelines("%s\n"%(exploit))
+        with open(outFileName, 'a') as outfile:
+            outfile.writelines("%s\n"%(exploit))
+            outfile.close()
     except TimeoutException:
         if echo:
             print("%s %s"%(colored.blue("No XSS for URL: "), colored.white(exploit)))
